@@ -48,6 +48,12 @@ Float outputs only:
   Must be in range from min_power to 1. Defaults to ``1``.
 - **zero_means_zero** (*Optional*, boolean): Sets the output to use actual 0 instead of ``min_power``.
   Defaults to ``false``.
+- **min_turn_on_power** (*Optional*, float): Sets the minimum output value required to turn on this device.
+  In case the device is off and a power value smaller than ``min_turn_on_power`` is requested, the output value will first be set to ``min_turn_on_power`` before setting the requested output value.
+  Use ``min_turn_on_power_delay`` to specify the amount of time the output value will be at ``min_turn_on_power`` before setting the requested output value.
+  Defaults to ``0``.
+- **min_turn_on_power_delay** (*Optional*, :ref:`config-time`): The amount of time the output will be set to ``min_turn_on_power`` before switching back to the requested power.
+  Defaults to ``10ms``.
 
 
 .. _output-turn_on_action:
